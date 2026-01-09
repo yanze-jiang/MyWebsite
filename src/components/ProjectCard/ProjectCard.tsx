@@ -16,13 +16,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       <div className="project-content">
         <h3 className="project-title">{project.title}</h3>
         <div className="project-description">
-          {project.description.split('\n').map((line, index, array) => {
+          {project.description.split('\n').map((line, index) => {
             const trimmedLine = line.trim()
             const isEmpty = trimmedLine === ''
             const isSectionTitle = trimmedLine.endsWith(':') && !trimmedLine.startsWith('•')
             const isListItem = trimmedLine.startsWith('•')
-            const prevLine = index > 0 ? array[index - 1].trim() : ''
-            const isAfterSectionTitle = prevLine.endsWith(':')
             
             if (isEmpty) {
               return <div key={index} className="description-spacer" />
