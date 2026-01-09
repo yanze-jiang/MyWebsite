@@ -1,0 +1,17 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 80px; /* 为固定头部留出空间 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 70px;
+  }
+}
