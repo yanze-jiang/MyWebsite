@@ -543,3 +543,24 @@
     margin-top: 0.25rem;
   }
 }
+
+.cdmp-banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
+
+.cdmp-banner {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .cdmp-banner-container {
+    padding: 1rem 0;
+  }
+}

@@ -1,5 +1,6 @@
 import { cvData } from '../data/cv'
 import './Home.css'
+import idaImage from '../pic/ida.png'
 
 const Education = () => {
   const { education } = cvData
@@ -124,6 +125,13 @@ const Education = () => {
             </div>
           </section>
         )}
+        
+        {/* CDMP Banner */}
+        <section className="section">
+          <div className="cdmp-banner-container">
+            <img src={idaImage} alt="CDMP Program Banner" className="cdmp-banner" />
+          </div>
+        </section>
       </div>
     </div>
   )
