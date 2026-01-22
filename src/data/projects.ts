@@ -13,7 +13,7 @@ export const projects: Project[] = [
   {
     id: 'easyjob',
     title: 'EasyJob - AI CV Helper',
-    description: 'An AI-powered CV helper application that assists users in creating and optimizing their resumes using advanced natural language processing techniques.\n\nAvailable Functions:\n• Resume Polish\n• Cover Letter\n\nNew Function "CV Editor" (In Development)\n\nTechnical Details:\n• Model: qwen3-plus',
+    description: 'An AI-powered CV helper application that assists users in creating and optimizing their resumes using advanced natural language processing techniques.\n\nAvailable Functions:\n• Edit CV [Newly released!]\n• Polish Project\n• Write Cover Letter\n\nTechnical Details:\n• Model: qwen3-plus',
     technologies: ['React', 'TypeScript', 'AI/ML', 'NLP', 'qwen3-plus'],
     githubUrl: 'https://github.com/yanze-jiang/EasyJob',
     liveUrl: 'https://easyjob-frontend.onrender.com/',
