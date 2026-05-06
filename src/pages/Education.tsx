@@ -168,6 +168,22 @@ const Education = () => {
             ))}
           </div>
         </section>
+
+        <section className="section education-video-section">
+          <div className="education-video-header">
+            <p className="section-label">Video</p>
+            <h2 className="section-heading">Program highlight</h2>
+          </div>
+          <div className="education-video-embed" aria-label="YouTube video">
+            <iframe
+              src="https://www.youtube.com/embed/e5LgXqwGo-Q"
+              title="Education video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </section>
       </div>
     </div>
   )

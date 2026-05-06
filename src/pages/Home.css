@@ -308,6 +308,34 @@
   font-size: 0.92rem;
 }
 
+.education-video-header {
+  margin-bottom: var(--page-gap);
+}
+
+.education-video-embed {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  position: relative;
+}
+
+.education-video-embed::before {
+  content: '';
+  display: block;
+  padding-top: 56.25%;
+}
+
+.education-video-embed iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 @media (max-width: 900px) {
   .hero-section,
   .origin-section {
