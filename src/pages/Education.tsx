@@ -14,6 +14,11 @@ const educationGallery = [
     title: 'Field Trip',
     image: fieldTripImage,
     alt: 'IDADM field trip'
+  },
+  {
+    title: 'Program Video',
+    videoEmbedUrl: 'https://www.youtube.com/embed/e5LgXqwGo-Q',
+    alt: 'IDADM program video'
   }
 ]
 
@@ -159,29 +164,24 @@ const Education = () => {
             {educationGallery.map((item) => (
               <article className="education-gallery-card" key={item.title}>
                 <div className="education-gallery-image">
-                  <img src={item.image} alt={item.alt} />
+                  {'videoEmbedUrl' in item ? (
+                    <iframe
+                      className="education-gallery-video"
+                      src={item.videoEmbedUrl}
+                      title={item.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <img src={item.image} alt={item.alt} />
+                  )}
                 </div>
                 <div className="education-gallery-content">
                   <h3>{item.title}</h3>
                 </div>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="section education-video-section">
-          <div className="education-video-header">
-            <p className="section-label">Video</p>
-            <h2 className="section-heading">Program highlight</h2>
-          </div>
-          <div className="education-video-embed" aria-label="YouTube video">
-            <iframe
-              src="https://www.youtube.com/embed/e5LgXqwGo-Q"
-              title="Education video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
           </div>
         </section>
       </div>

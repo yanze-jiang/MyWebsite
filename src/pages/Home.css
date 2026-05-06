@@ -291,6 +291,13 @@
   width: 100%;
 }
 
+.education-gallery-video {
+  aspect-ratio: 4 / 3;
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .education-gallery-content {
   padding: 1rem 1.1rem;
 }
