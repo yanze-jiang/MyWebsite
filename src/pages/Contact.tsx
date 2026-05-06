@@ -79,7 +79,7 @@ const Contact = () => {
                     <span>GitHub</span>
                   </a>
                   <a
-                    href="https://www.instagram.com/robertyz666?igsh=MW5qMWU3NjJsc2JkYg%3D%3D&utm_source=qr"
+                    href="https://www.instagram.com/yanze4202"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-link"
