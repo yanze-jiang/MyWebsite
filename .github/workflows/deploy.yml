@@ -28,8 +28,18 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
+      - name: Normalize npm registry in lockfile
+        run: |
+          node -e "const fs=require('fs');const p='package-lock.json';const s=fs.readFileSync(p,'utf8');const out=s.replaceAll('https://registry.npmmirror.com/','https://registry.npmjs.org/');if(out!==s){fs.writeFileSync(p,out);console.log('Rewrote package-lock.json resolved URLs to registry.npmjs.org');}else{console.log('No npmmirror URLs found in lockfile');}"
+
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm config set registry https://registry.npmjs.org --location=project
+          npm config set fetch-retries 5 --location=project
+          npm config set fetch-retry-mintimeout 20000 --location=project
+          npm config set fetch-retry-maxtimeout 120000 --location=project
+          npm config set fetch-timeout 300000 --location=project
+          npm ci --no-audit --no-fund
 
       - name: Build
         run: npm run build
