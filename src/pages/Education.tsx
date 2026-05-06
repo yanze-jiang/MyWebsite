@@ -11,12 +11,12 @@ const educationGallery = [
     alt: 'IDADM Co-op dinner'
   },
   {
-    title: 'Field Trip',
+    title: 'Group Photo of IDADM 1st Cohort',
     image: fieldTripImage,
     alt: 'IDADM field trip'
   },
   {
-    title: 'Program Video',
+    title: 'Asia Field Trip to Indonesia 2025',
     videoEmbedUrl: 'https://www.youtube.com/embed/e5LgXqwGo-Q',
     alt: 'IDADM program video'
   }
