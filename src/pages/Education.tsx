@@ -1,6 +1,21 @@
 import { cvData } from '../data/cv'
 import './Home.css'
 import idaImage from '../pic/ida.png'
+import coopDinnerImage from '../pic/COOP_Dinner_IDADM.jpg'
+import fieldTripImage from '../pic/Field_Trip_IDADM.jpg'
+
+const educationGallery = [
+  {
+    title: 'Co-op Dinner',
+    image: coopDinnerImage,
+    alt: 'IDADM Co-op dinner'
+  },
+  {
+    title: 'Field Trip',
+    image: fieldTripImage,
+    alt: 'IDADM field trip'
+  }
+]
 
 const Education = () => {
   const { education } = cvData
@@ -11,8 +26,10 @@ const Education = () => {
         {/* Education */}
         {education.length > 0 && (
           <section className="section">
-            <div className="intro-text-wrapper">
-              <h1 className="welcome-title">Education</h1>
+            <div className="page-header">
+              <p className="section-label">Education</p>
+              <h1 className="page-title">Academic background</h1>
+              <p className="page-subtitle">“Stay hungry, stay foolish.”</p>
             </div>
             <div className="education-list">
               {education.map((edu, index) => (
@@ -130,6 +147,25 @@ const Education = () => {
         <section className="section">
           <div className="cdmp-banner-container">
             <img src={idaImage} alt="CDMP Program Banner" className="cdmp-banner" />
+          </div>
+        </section>
+
+        <section className="section education-gallery-section">
+          <div className="education-gallery-header">
+            <p className="section-label">Gallery</p>
+            <h2 className="section-heading">Program moments</h2>
+          </div>
+          <div className="education-gallery">
+            {educationGallery.map((item) => (
+              <article className="education-gallery-card" key={item.title}>
+                <div className="education-gallery-image">
+                  <img src={item.image} alt={item.alt} />
+                </div>
+                <div className="education-gallery-content">
+                  <h3>{item.title}</h3>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
       </div>

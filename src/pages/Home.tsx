@@ -7,52 +7,72 @@ const Home = () => {
   return (
     <div className="home">
       <div className="container">
-        <h1 className="welcome-title">Welcome to my page!</h1>
-        
-        <div className="intro-text-wrapper">
-          <p className="intro-text">
-            I am <strong>JIANG, Yanze (江彦泽)</strong>, and you can also call me <strong>Robert</strong>.
-          </p>
-        </div>
+        <section className="hero-section">
+          <div className="hero-copy">
+            <p className="eyebrow">AI & Data Science Student @CUHK</p>
+            <h1 className="hero-title">
+              <span>Yanze Jiang</span>
+              <span className="hero-title-sub">江彥澤 / Robert</span>
+            </h1>
+            <p className="hero-summary">
+              I am a third-year Collaborative Double Major student at CUHK and CUHK-Shenzhen,
+              focusing on AI, Large Language Models and Data Science.
+            </p>
+            <ul className="hero-bullets">
+              <li>
+                First cohort of{' '}
+                <a
+                  href="https://www.sci.cuhk.edu.hk/academic/undergraduate-studies/programmes-offered/idadm/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  IDADM
+                </a>
+              </li>
+              <li>Fifth cohort of Co-op@CUHK</li>
+            </ul>
+            <div className="hero-actions">
+              <Link to="/project" className="button button-primary">View Projects</Link>
+              <Link to="/contact" className="button button-secondary">Contact Me</Link>
+            </div>
+            <dl className="hero-metrics" aria-label="Profile highlights">
+              <div>
+                <dt>3.83/4.00</dt>
+                <dd>Current CGPA</dd>
+              </div>
+              <div>
+                <dt>Dean's List</dt>
+                <dd>2023-24 and 2024-25</dd>
+              </div>
+              <div>
+                <dt>Top 0.5% in Gaokao</dt>
+                <dd>Hubei Province / Science Track</dd>
+              </div>
+            </dl>
+          </div>
+          <div className="hero-photo">
+            <img src={mePhoto} alt="Yanze Jiang" />
+          </div>
+        </section>
 
-        <div className="intro-section">
-          <div className="intro-left">
-            <div className="photo-container">
-              <img src={mePhoto} alt="Yanze Jiang" className="photo" />
+        <section className="origin-section">
+          <div className="origin-image">
+            <img src={wuhanPhoto} alt="Wuhan riverfront" />
+          </div>
+          <div className="origin-copy">
+            <p className="section-label">Born and raised</p>
+            <h2 className="section-heading">From Wuhan to Hong Kong and Shenzhen.</h2>
+            <p>
+              I am from Wuhan (武漢), a city in central China located where the Yangtze and Han
+              rivers meet. I grew up with its riverbanks, breakfast culture, historic streets,
+              and direct, energetic pace.
+            </p>
+            <div className="inline-links">
+              <Link to="/education" className="text-link">Education background</Link>
+              <Link to="/moment" className="text-link">Personal moments</Link>
             </div>
           </div>
-          <div className="intro-content">
-            <p>
-              Currently I am a third year student from <strong className="idadm-bold">IDADM in both CUHK and CUHK-Shenzhen</strong>, concentrating in <strong className="cs-ds-bold">Computer Science and Data Science</strong>. You can see my education background at{' '}
-              <Link to="/education" className="education-link">Education</Link>.
-            </p>
-            <p className="intro-description">
-              Through my academic projects and research experience, I have developed hands-on skills in fine-tuning LLMs, implementing RAG systems, and building machine learning models. I recently fine-tuned the Qwen3-4B model with LoRA and PEFT, achieving 79.6% accuracy on professional benchmarks. I have also led the development of a noise monitoring web application and built predictive models for healthcare data.
-            </p>
-            <p className="intro-description">
-              I am currently seeking a Co-op or internship where I can apply my skills in AI, LLM development, and data-driven problem-solving to impactful projects.
-            </p>
-          </div>
-        </div>
-
-        <div className="wuhan-section">
-          <div className="wuhan-content">
-            <p>
-              I am from <strong>Wuhan (武汉)</strong>, the biggest city in central part of China, which is recovering from the trauma of the COVID-19.
-            </p>
-            <p className="wuhan-intro">
-              Wuhan is located at the confluence of the Yangtze and Han rivers, where you can enjoy beautiful riverbanks. I love the food in Wuhan, especially the breakfast (过早), with various delicious food including hot dry noodles (热干面), doupi (豆皮), youtiao (油条). (Too many to be listed here!)
-            </p>
-            <p className="wuhan-intro">
-              You can also see a lot of Western buildings in downtown, which used to be concessions (租界) that witnessed the development of the city in the past century. It could be a very chill journey to walk through them, and see how the city thrived through wars and developed into a modern metropolis.
-            </p>
-          </div>
-          <div className="wuhan-right">
-            <div className="photo-container">
-              <img src={wuhanPhoto} alt="Wuhan" className="photo" />
-            </div>
-          </div>
-        </div>
+        </section>
       </div>
     </div>
   )

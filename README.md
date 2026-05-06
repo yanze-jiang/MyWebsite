@@ -1,41 +1,64 @@
-# 个人网站
+# Yanze Jiang Personal Website
 
-基于 React + Vite 构建的现代化个人网站，支持 GitHub Pages 部署。
+A personal website for presenting my background, projects, education, selected moments, and contact information.
 
-## 功能特性
+The site is built with React, TypeScript, and Vite, and is deployed to GitHub Pages.
 
-- 📄 个人简历/介绍
-- 💼 项目作品集展示
-- 🛠️ 技能展示
-- 📧 联系方式
+## Pages
 
-## 技术栈
+- `Home`: profile summary, education highlights, and personal background
+- `Project`: selected course projects and toy projects
+- `Education`: academic background, program information, and gallery
+- `Moments`: travel and field experience gallery
+- `Contact`: email, phone, and social media links
+
+## Tech Stack
 
 - React 18
 - TypeScript
 - Vite
 - React Router
+- GitHub Pages
 
-## 开发
+## Development
 
 ```bash
-# 安装依赖
 npm install
-
-# 启动开发服务器
 npm run dev
+```
 
-# 构建生产版本
+Production build:
+
+```bash
 npm run build
+```
 
-# 预览生产构建
+Preview the production build:
+
+```bash
 npm run preview
 ```
 
-## 部署
+Lint:
 
-项目配置了 GitHub Actions 自动部署到 GitHub Pages。每次推送到 main 分支时，会自动构建并部署。
+```bash
+npm run lint
+```
 
-## 许可证
+## Content
 
-MIT
+Most editable content lives in:
+
+- `src/pages/Home.tsx`
+- `src/pages/Education.tsx`
+- `src/pages/Moment.tsx`
+- `src/pages/Contact.tsx`
+- `src/data/projects.ts`
+- `src/data/skills.ts`
+- `src/data/cv.ts`
+
+Images are stored in `src/pic/`. Static icons are stored in `public/icons/`.
+
+## Deployment
+
+The site is configured for GitHub Pages under the `/MyWebsite/` base path. Pushing to the `main` branch triggers the GitHub Actions workflow in `.github/workflows/deploy.yml`.

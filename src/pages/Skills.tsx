@@ -22,36 +22,39 @@ const Skills = () => {
   return (
     <div className="skills">
       <div className="container">
-        <section className="skills-header">
-          <h1 className="page-title">Skills</h1>
-          <p className="page-subtitle">
-            Here are the technical skills and tools I'm proficient with, continuously learning and improving.
-          </p>
-        </section>
+        <section className="section">
+          <div className="page-header">
+            <p className="section-label">Skills</p>
+            <h1 className="page-title">Skills</h1>
+            <p className="page-subtitle">
+              Here are the technical skills and tools I'm proficient with, continuously learning and improving.
+            </p>
+          </div>
 
-        {skills.length === 0 ? (
-          <div className="empty-state">
-            <p>No skills information available. Please add skill data to data/skills.ts</p>
-          </div>
-        ) : (
-          <div className="skills-content">
-            {skills.map((category, index) => (
-              <section key={index} className="skill-category">
-                <h2 className="category-title">{category.category}</h2>
-                <div className="skills-list">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="skill-item">
-                      <div className="skill-header">
-                        <span className="skill-name">{skill.name}</span>
-                        {renderSkillLevel(skill.level)}
+          {skills.length === 0 ? (
+            <div className="empty-state">
+              <p>No skills information available. Please add skill data to data/skills.ts</p>
+            </div>
+          ) : (
+            <div className="skills-content">
+              {skills.map((category, index) => (
+                <section key={index} className="skill-category">
+                  <h2 className="category-title">{category.category}</h2>
+                  <div className="skills-list">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div key={skillIndex} className="skill-item">
+                        <div className="skill-header">
+                          <span className="skill-name">{skill.name}</span>
+                          {renderSkillLevel(skill.level)}
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            ))}
-          </div>
-        )}
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          )}
+        </section>
       </div>
     </div>
   )

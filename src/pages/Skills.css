@@ -2,65 +2,39 @@
   min-height: calc(100vh - 200px);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.skills-header {
-  text-align: center;
-  margin-bottom: 4rem;
-  padding: 2rem 0;
-}
-
-.page-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), #06b6d4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.page-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
 .skills-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap);
 }
 
 .skill-category {
-  background: var(--bg-light);
-  padding: 2rem;
-  border-radius: 12px;
-  border-top: 4px solid var(--primary-color);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--card-padding);
 }
 
 .category-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: var(--text-color);
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 750;
+  line-height: 1.3;
+  margin-bottom: 1rem;
 }
 
 .skills-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
 .skill-item {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--line);
+  padding: 0.85rem 0;
+}
+
+.skill-item:first-child {
+  padding-top: 0;
 }
 
 .skill-item:last-child {
@@ -68,29 +42,30 @@
 }
 
 .skill-header {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  display: flex;
   gap: 1rem;
+  justify-content: space-between;
 }
 
 .skill-name {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text-color);
+  color: var(--muted);
+  font-size: 0.98rem;
+  font-weight: 650;
+  line-height: 1.45;
 }
 
 .skill-level {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .level-dot {
-  width: 12px;
-  height: 12px;
+  height: 10px;
   border-radius: 50%;
-  background-color: var(--border-color);
+  background-color: var(--line);
   transition: background-color 0.3s ease;
+  width: 10px;
 }
 
 .level-dot.filled {
@@ -106,22 +81,8 @@
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
-
-  .page-title {
-    font-size: 2rem;
-  }
-
   .skills-content {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .skills-header {
-    margin-bottom: 2rem;
-    padding: 1rem 0;
   }
 
   .skill-header {

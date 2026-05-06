@@ -15,9 +15,9 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
 
   const navItems = [
     { path: '/', label: 'Home' },
+    { path: '/project', label: 'Projects' },
     { path: '/education', label: 'Education' },
-    { path: '/project', label: 'Project' },
-    { path: '/moment', label: 'Moment' },
+    { path: '/moment', label: 'Moments' },
     { path: '/contact', label: 'Contact' },
   ]
 

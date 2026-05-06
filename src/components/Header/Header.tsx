@@ -14,7 +14,8 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="logo">
-          <span className="logo-text">MyPage</span>
+          <span className="logo-mark">YJ</span>
+          <span className="logo-text">Yanze Jiang</span>
         </Link>
         <button 
           className="menu-toggle"

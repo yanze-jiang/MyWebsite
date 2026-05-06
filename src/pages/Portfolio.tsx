@@ -9,8 +9,9 @@ const Portfolio = () => {
   return (
     <div className="portfolio">
       <div className="container">
-        <section className="portfolio-header">
-          <h1 className="page-title">Portfolio</h1>
+        <section className="page-header">
+          <p className="section-label">Project</p>
+          <h1 className="page-title">Project</h1>
           <p className="page-subtitle">
             Here are some projects I've worked on, showcasing my technical skills and practical experience.
           </p>

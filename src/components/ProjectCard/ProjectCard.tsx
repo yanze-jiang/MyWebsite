@@ -3,83 +3,90 @@ import './ProjectCard.css'
 
 interface ProjectCardProps {
   project: Project
+  index?: number
 }
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard = ({ project, index }: ProjectCardProps) => {
+  const projectNumber = typeof index === 'number' ? String(index + 1).padStart(2, '0') : null
+  const baseUrl = import.meta.env.BASE_URL
+
   return (
-    <div className="project-card">
+    <article className="project-card">
       {project.image && (
         <div className="project-image">
           <img src={project.image} alt={project.title} />
         </div>
       )}
       <div className="project-content">
-        <h3 className="project-title">{project.title}</h3>
-        <div className="project-description">
-          {project.description.split('\n').map((line, index) => {
-            const trimmedLine = line.trim()
-            const isEmpty = trimmedLine === ''
-            const isSectionTitle = trimmedLine.endsWith(':') && !trimmedLine.startsWith('•')
-            const isListItem = trimmedLine.startsWith('•')
-            
-            if (isEmpty) {
-              return <div key={index} className="description-spacer" />
-            }
-            
-            if (isSectionTitle) {
-              return (
-                <h4 key={index} className="description-section-title">
-                  {trimmedLine}
-                </h4>
-              )
-            }
-            
-            if (isListItem) {
-              return (
-                <div key={index} className="description-list-item">
-                  {trimmedLine.substring(1).trim()}
-                </div>
-              )
-            }
-            
-            return (
-              <p key={index} className="description-text">
-                {trimmedLine}
-              </p>
-            )
-          })}
+        <div className="project-main">
+          <div className="project-card-header">
+            <p className="project-kicker">
+              {projectNumber && <span>{projectNumber}</span>}
+              {project.technologies.slice(0, 2).join(' / ')}
+            </p>
+            <h3 className="project-title">{project.title}</h3>
+            <p className="project-summary">{project.summary}</p>
+          </div>
+
+          <p className="project-description">{project.description}</p>
+
           {(project.githubUrl || project.liveUrl) && (
-            <div className="project-links-inline">
+            <div className="project-actions">
               {project.githubUrl && (
-                <span>
-                  GitHub: <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link-inline"
-                  >
-                    {project.githubUrl}
-                  </a>
-                </span>
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                  aria-label={`${project.title} GitHub repository`}
+                >
+                  <img src={`${baseUrl}icons/github.svg`} alt="" aria-hidden="true" />
+                </a>
               )}
               {project.liveUrl && (
-                <span>
-                  {project.githubUrl && <br />}
-                  Demo: <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link-inline"
-                  >
-                    {project.liveUrl}
-                  </a>
-                </span>
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
+                  Demo
+                </a>
               )}
             </div>
           )}
         </div>
+
+        <aside className="project-details" aria-label={`${project.title} details`}>
+          {project.role && (
+            <div className="project-detail-block">
+              <h4>Role</h4>
+              <p>{project.role}</p>
+            </div>
+          )}
+
+          {project.impact && project.impact.length > 0 && (
+            <div className="project-detail-block">
+              <h4>Impact</h4>
+              <ul className="project-impact">
+                {project.impact.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div className="project-detail-block">
+            <h4>Stack</h4>
+            <div className="project-technologies" aria-label="Technologies used">
+              {project.technologies.map((technology) => (
+                <span key={technology} className="tech-tag">{technology}</span>
+              ))}
+            </div>
+          </div>
+        </aside>
       </div>
-    </div>
+    </article>
   )
 }
 
