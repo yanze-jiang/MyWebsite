@@ -59,7 +59,7 @@ const Moment = () => {
           </div>
 
           <blockquote className="moment-quote">
-            <p>" Do not go gentle into that good night,</p>
+            <p>"Do not go gentle into that good night,</p>
             <p>Rage, rage against the dying of the light."</p>
             <cite>— Dylan Thomas</cite>
           </blockquote>
