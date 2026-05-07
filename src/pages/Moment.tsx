@@ -40,7 +40,7 @@ const Moment = () => {
             <p className="section-label">Moments</p>
             <h1 className="page-title">Snapshots outside coursework</h1>
             <p className="page-subtitle">
-              A few trips, field experiences, and places that shaped my life beyond projects and lectures.
+              A few trips, field experiences, and places that shaped my life beyond dull life.
             </p>
           </div>
 
